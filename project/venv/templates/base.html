@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App by Ms Smolkina</title>
+
+    <!-- from https://semantic-ui.com/introduction/getting-started.html
+ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+    <div style="margin-top: 50px;" class="ui pink container">
+        <h1 class="ui  center aligned header">To Do App by Ms Smolkina
+            <i class="check mark icon"></i>
+        </h1>
+        
+
+        <form class="ui  form" action="/add" method="post">
+            <div class="field">
+<!--                 <a class="ui image label">
+                    <img src="/Pictures/todo.jpg">
+                    Todo
+                </a> -->
+                <label>Todo Title</label>
+               <!--  <div class="ui left icon input loading">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                  </div> -->
+                <!-- <div class="ui right labeled left icon input">
+                <i class="tags icon"></i>
+                <input type="text" placeholder="Enter tags">
+                <a class="ui tag label">
+                    Add Tag
+                </a>
+                </div> -->
+
+                <div class="ui right button left icon input">
+                    <!-- <i class="tags icon"></i> -->
+                    <input type="text" name="title" placeholder="Next suffer is..."><br>
+                   <!--  <a class="ui tag label">
+                        Please enter Next task
+                    </a> -->
+                </div>
+                <button class="ui right blue button" type="submit">Add new task </button>
+                <div class="ui pointing red basic label">
+                    Please enter Next task
+                </div>
+
+
+
+
+
+                <!-- <input type="text" name="title" placeholder="Next task is..."><br> -->
+               <!-- 
+                <div class="ui pointing red basic label">
+                    Please enter Next task
+                </div> -->
+            </div>
+            <!-- <button class="ui blue button" type="submit">Add new task </button> -->
+        </form>
+
+        <hr>
+        
+        <a class="ui small tag label">Basic</a>
+        <a class="ui small tag label">Work</a>
+        <a class="ui small tag label">Study</a>
+        <a class="ui small tag label">Suffer</a>   
+
+        {% for todo in todo_list %}
+        <div class="ui segment">
+            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+
+            {% if todo.complete == False %}
+            <span class="ui gray label">Not done</span>
+            {% else %}
+            <span class="ui green label">Done</span>
+            {% endif %}
+
+            <a class="ui mini pink button" href="/update/{{ todo.id }}">Update</a>
+            <a class="ui mini red button" href="/delete/{{ todo.id }}">Delete</a>
+            <a class="ui small tag label">Suffer</a> 
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
