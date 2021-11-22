@@ -1,5 +1,9 @@
-# project_web_app_flask
-project: webb app flask for ai software course
-Проект по питоне веб приложения  "листа заданий или todo list" на фласк
-как запустить: пожалуйста скачайте архив и разархивируйте
-  нпример в visualstudio code можнооткрыть проект в частности питоновский файл и через консоль запустить его, в консоли появиться Localhost перейдя на него через ctrl + клик, окажетесь на главной странице проекта
+Flask Web App Tutorial
+Setup & Installtion
+Make sure you have the latest version of Python installed.
+
+git clone <repo-url>
+pip install -r requirements.txt
+Running The App
+python main.py
+Viewing The App
